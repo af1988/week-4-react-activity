@@ -3,16 +3,20 @@ import { CalculatorDisplay, CalculatorKey } from './components';
 import { NumericKeys } from './enums/numeric-keys.enum';
 import { OperatorKeys } from './enums/operator-keys.enum';
 import { ActionKeys } from './enums/action-keys.enum';
+import { useState } from 'react';
+
 
 
 export default function Calculator() {
+
+  const [display, setDisplay] = useState('0');
 
   return (
     <div className='container'>
       <div className="calculator">
 
         
-        <CalculatorDisplay />
+      <CalculatorDisplay displayValue={display} />
 
 
         <div className="calculator-keypad">
