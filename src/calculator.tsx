@@ -9,6 +9,10 @@ import { useState } from 'react';
 export default function Calculator() {
   const [display, setDisplay] = useState("0");
 
+  function numericKeyPressHandler(key: NumericKeys): void {
+    setDisplay(key);
+  }
+
   function dummy(key: NumericKeys | OperatorKeys | ActionKeys): void {
     alert(`${key}-key pressed.`);
   }
@@ -41,7 +45,7 @@ export default function Calculator() {
               <CalculatorKey
                 className="key-0"
                 label={NumericKeys.ZERO}
-                onPress={dummy}
+                onPress={numericKeyPressHandler}
               />
               <CalculatorKey
                 className="key-dot"
@@ -51,47 +55,47 @@ export default function Calculator() {
               <CalculatorKey
                 className="key-1"
                 label={NumericKeys.ONE}
-                onPress={dummy}
+                onPress={numericKeyPressHandler}
               />
               <CalculatorKey
                 className="key-2"
                 label={NumericKeys.TWO}
-                onPress={dummy}
+                onPress={numericKeyPressHandler}
               />
               <CalculatorKey
                 className="key-3"
                 label={NumericKeys.THREE}
-                onPress={dummy}
+                onPress={numericKeyPressHandler}
               />
               <CalculatorKey
                 className="key-4"
                 label={NumericKeys.FOUR}
-                onPress={dummy}
+                onPress={numericKeyPressHandler}
               />
               <CalculatorKey
                 className="key-5"
                 label={NumericKeys.FIVE}
-                onPress={dummy}
+                onPress={numericKeyPressHandler}
               />
               <CalculatorKey
                 className="key-6"
                 label={NumericKeys.SIX}
-                onPress={dummy}
+                onPress={numericKeyPressHandler}
               />
               <CalculatorKey
                 className="key-7"
                 label={NumericKeys.SEVEN}
-                onPress={dummy}
+                onPress={numericKeyPressHandler}
               />
               <CalculatorKey
                 className="key-8"
                 label={NumericKeys.EIGHT}
-                onPress={dummy}
+                onPress={numericKeyPressHandler}
               />
               <CalculatorKey
                 className="key-9"
                 label={NumericKeys.NINE}
-                onPress={dummy}
+                onPress={numericKeyPressHandler}
               />
             </div>
           </div>
