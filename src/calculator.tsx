@@ -5,19 +5,26 @@ import { OperatorKeys } from './enums/operator-keys.enum';
 import { ActionKeys } from './enums/action-keys.enum';
 import { useState } from 'react';
 
+import { ICalculatorModel } from './interfaces/calculator-model.interface';
+import { CalculatorModel } from './models/calculator.model';
+
+const calculatorModel: ICalculatorModel = new CalculatorModel();
 
 export default function Calculator() {
-  const [display, setDisplay] = useState("0");
+  const [display, setDisplay] = useState(calculatorModel.display());
 
   function numericKeyPressHandler(key: NumericKeys): void {
-    setDisplay(key);
+    calculatorModel.pressNumericKey(key);
+    setDisplay(calculatorModel.display());
   }
 
   function operatorKeyPressHandler(key: OperatorKeys): void {
+    calculatorModel.pressOperatorKey(key)
     setDisplay(key);
   }
 
   function actionKeyPressHandler(key: ActionKeys): void {
+    calculatorModel.pressActionKey(key)
     setDisplay(key);
   }
 
