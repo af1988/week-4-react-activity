@@ -13,6 +13,14 @@ export default function Calculator() {
     setDisplay(key);
   }
 
+  function operatorKeyPressHandler(key: OperatorKeys): void {
+    setDisplay(key);
+  }
+
+  function actionKeyPressHandler(key: ActionKeys): void {
+    setDisplay(key);
+  }
+
   function dummy(key: NumericKeys | OperatorKeys | ActionKeys): void {
     alert(`${key}-key pressed.`);
   }
@@ -28,17 +36,17 @@ export default function Calculator() {
               <CalculatorKey
                 className="key-clear"
                 label={ActionKeys.CLEAR}
-                onPress={dummy}
+                onPress={actionKeyPressHandler}
               />
               <CalculatorKey
                 className="key-sign"
                 label={ActionKeys.SIGN_FLIP}
-                onPress={dummy}
+                onPress={actionKeyPressHandler}
               />
               <CalculatorKey
                 className="key-percent"
                 label={OperatorKeys.SQRT}
-                onPress={dummy}
+                onPress={operatorKeyPressHandler}
               />
             </div>
             <div className="digit-keys">
@@ -50,7 +58,7 @@ export default function Calculator() {
               <CalculatorKey
                 className="key-dot"
                 label={ActionKeys.DOT}
-                onPress={dummy}
+                onPress={actionKeyPressHandler}
               />
               <CalculatorKey
                 className="key-1"
@@ -103,27 +111,27 @@ export default function Calculator() {
             <CalculatorKey
               className="key-divide"
               label={OperatorKeys.DIV}
-              onPress={dummy}
+              onPress={operatorKeyPressHandler}
             />
             <CalculatorKey
               className="key-multiply"
               label={OperatorKeys.MULT}
-              onPress={dummy}
+              onPress={operatorKeyPressHandler}
             />
             <CalculatorKey
               className="key-subtract"
               label={OperatorKeys.MINUS}
-              onPress={dummy}
+              onPress={operatorKeyPressHandler}
             />
             <CalculatorKey
               className="key-add"
               label={OperatorKeys.PLUS}
-              onPress={dummy}
+              onPress={operatorKeyPressHandler}
             />
             <CalculatorKey
               className="key-equals"
               label={ActionKeys.EQUALS}
-              onPress={dummy}
+              onPress={actionKeyPressHandler}
             />
           </div>
         </div>
